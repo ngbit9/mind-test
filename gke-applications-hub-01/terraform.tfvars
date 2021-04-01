@@ -1,0 +1,8 @@
+project_id = "mv-prod-applications-hub"
+region     = "us-east4"
+cluster_name_suffix = ""
+network = "vpc-us-east4-01"
+subnet = "subnet-us-east4-01-01"
+ip_range_pods = "pods-subnet"
+ip_range_services = "svc-subnet"
+cluster_name  = "gke-us-east4-applications-hub-01"
