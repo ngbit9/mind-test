@@ -1,0 +1,9 @@
+version: 3
+automerge: true
+projects:
+- dir: gke-applications-hub-01/
+  workspace: default
+  terraform_version: 0.14.7
+  autoplan:
+    when_modified: ['*.tf']
+    enabled: false
