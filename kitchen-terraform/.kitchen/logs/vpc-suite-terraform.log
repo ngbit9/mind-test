@@ -1,0 +1,44 @@
+I, [2021-04-05T09:08:24.670618 #36479]  INFO -- vpc-suite-terraform: -----> Destroying <vpc-suite-terraform>...
+W, [2021-04-05T09:08:24.672409 #36479]  WARN -- vpc-suite-terraform: Verifying the Terraform client version is in the supported interval of >= 0.11.4, < 0.15.0...
+W, [2021-04-05T09:08:24.672478 #36479]  WARN -- vpc-suite-terraform: Reading the Terraform client version...
+I, [2021-04-05T09:08:24.741481 #36479]  INFO -- vpc-suite-terraform: Terraform v0.14.9
+I, [2021-04-05T09:08:24.741826 #36479]  INFO -- vpc-suite-terraform: + provider registry.terraform.io/hashicorp/google v3.62.0
+W, [2021-04-05T09:08:24.754854 #36479]  WARN -- vpc-suite-terraform: Finished reading the Terraform client version.
+W, [2021-04-05T09:08:24.755180 #36479]  WARN -- vpc-suite-terraform: Finished verifying the Terraform client version.
+W, [2021-04-05T09:08:24.755263 #36479]  WARN -- vpc-suite-terraform: Initializing the Terraform working directory...
+I, [2021-04-05T09:08:24.831267 #36479]  INFO -- vpc-suite-terraform: [0m[1mInitializing modules...[0m
+I, [2021-04-05T09:08:24.848522 #36479]  INFO -- vpc-suite-terraform: 
+I, [2021-04-05T09:08:24.848601 #36479]  INFO -- vpc-suite-terraform: [0m[1mInitializing the backend...[0m
+I, [2021-04-05T09:08:25.089088 #36479]  INFO -- vpc-suite-terraform: 
+I, [2021-04-05T09:08:25.089176 #36479]  INFO -- vpc-suite-terraform: [0m[1mInitializing provider plugins...[0m
+I, [2021-04-05T09:08:25.089204 #36479]  INFO -- vpc-suite-terraform: - Reusing previous version of hashicorp/google from the dependency lock file
+I, [2021-04-05T09:08:25.493529 #36479]  INFO -- vpc-suite-terraform: - Using previously-installed hashicorp/google v3.62.0
+I, [2021-04-05T09:08:25.494149 #36479]  INFO -- vpc-suite-terraform: 
+I, [2021-04-05T09:08:25.494201 #36479]  INFO -- vpc-suite-terraform: [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+W, [2021-04-05T09:08:25.507555 #36479]  WARN -- vpc-suite-terraform: Finished initializing the Terraform working directory.
+W, [2021-04-05T09:08:25.507672 #36479]  WARN -- vpc-suite-terraform: Selecting the kitchen-terraform-vpc-suite-terraform Terraform workspace...
+W, [2021-04-05T09:08:25.825871 #36479]  WARN -- vpc-suite-terraform: Finished selecting the kitchen-terraform-vpc-suite-terraform Terraform workspace.
+W, [2021-04-05T09:08:25.826003 #36479]  WARN -- vpc-suite-terraform: Destroying the Terraform-managed infrastructure...
+I, [2021-04-05T09:08:27.439560 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.cloud_router.google_compute_router_nat.nats["mv-stg-applications-hub-cloud-nat"]: Destroying... [id=searce-academy/us-central1/mv-stg-applications-hub-router/mv-stg-applications-hub-cloud-nat][0m[0m
+I, [2021-04-05T09:08:37.439965 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.cloud_router.google_compute_router_nat.nats["mv-stg-applications-hub-cloud-nat"]: Still destroying... [id=searce-academy/us-central1/mv-stg-appli...uter/mv-stg-applications-hub-cloud-nat, 10s elapsed][0m[0m
+I, [2021-04-05T09:08:38.408263 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.cloud_router.google_compute_router_nat.nats["mv-stg-applications-hub-cloud-nat"]: Destruction complete after 11s[0m[0m
+I, [2021-04-05T09:08:38.418467 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.cloud_router.google_compute_router.router: Destroying... [id=projects/searce-academy/regions/us-central1/routers/mv-stg-applications-hub-router][0m[0m
+I, [2021-04-05T09:08:48.418344 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.cloud_router.google_compute_router.router: Still destroying... [id=projects/searce-academy/regions/us-cent...routers/mv-stg-applications-hub-router, 10s elapsed][0m[0m
+I, [2021-04-05T09:08:49.163846 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.cloud_router.google_compute_router.router: Destruction complete after 11s[0m[0m
+I, [2021-04-05T09:08:49.170338 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.subnets.google_compute_subnetwork.subnetwork["us-central1/subnet-us-east4-01-01"]: Destroying... [id=projects/searce-academy/regions/us-central1/subnetworks/subnet-us-east4-01-01][0m[0m
+I, [2021-04-05T09:08:59.171042 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.subnets.google_compute_subnetwork.subnetwork["us-central1/subnet-us-east4-01-01"]: Still destroying... [id=projects/searce-academy/regions/us-central1/subnetworks/subnet-us-east4-01-01, 10s elapsed][0m[0m
+I, [2021-04-05T09:09:00.112154 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.subnets.google_compute_subnetwork.subnetwork["us-central1/subnet-us-east4-01-01"]: Destruction complete after 11s[0m[0m
+I, [2021-04-05T09:09:00.118893 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.vpc.google_compute_network.network: Destroying... [id=projects/searce-academy/global/networks/vpc-us-east4-01][0m[0m
+I, [2021-04-05T09:09:10.119449 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.vpc.google_compute_network.network: Still destroying... [id=projects/searce-academy/global/networks/vpc-us-east4-01, 10s elapsed][0m[0m
+I, [2021-04-05T09:09:20.119642 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.vpc.google_compute_network.network: Still destroying... [id=projects/searce-academy/global/networks/vpc-us-east4-01, 20s elapsed][0m[0m
+I, [2021-04-05T09:09:20.848341 #36479]  INFO -- vpc-suite-terraform: [0m[1mmodule.vpc.google_compute_network.network: Destruction complete after 21s[0m[0m
+I, [2021-04-05T09:09:20.864707 #36479]  INFO -- vpc-suite-terraform: [0m[1m[32m
+I, [2021-04-05T09:09:20.864889 #36479]  INFO -- vpc-suite-terraform: Destroy complete! Resources: 4 destroyed.[0m
+W, [2021-04-05T09:09:20.877081 #36479]  WARN -- vpc-suite-terraform: Finished destroying the Terraform-managed infrastructure.
+W, [2021-04-05T09:09:20.877227 #36479]  WARN -- vpc-suite-terraform: Selecting the default Terraform workspace...
+I, [2021-04-05T09:09:21.180101 #36479]  INFO -- vpc-suite-terraform: [0m[32mSwitched to workspace "default".[0m
+W, [2021-04-05T09:09:21.193366 #36479]  WARN -- vpc-suite-terraform: Finished selecting the default Terraform workspace.
+W, [2021-04-05T09:09:21.193622 #36479]  WARN -- vpc-suite-terraform: Deleting the kitchen-terraform-vpc-suite-terraform Terraform workspace...
+I, [2021-04-05T09:09:21.502773 #36479]  INFO -- vpc-suite-terraform: [0m[32mDeleted workspace "kitchen-terraform-vpc-suite-terraform"![0m
+W, [2021-04-05T09:09:21.516097 #36479]  WARN -- vpc-suite-terraform: Finished deleting the kitchen-terraform-vpc-suite-terraform Terraform workspace.
+I, [2021-04-05T09:09:21.519877 #36479]  INFO -- vpc-suite-terraform: Finished destroying <vpc-suite-terraform> (0m56.84s).
