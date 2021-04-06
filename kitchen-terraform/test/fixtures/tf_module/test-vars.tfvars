@@ -1,4 +1,4 @@
-project_id = "searce-academy"
+project_id = "cert-302806"
 network_name = "vpc-us-east4-01"
 region = "us-central1"
 cloud_router_name = "mv-stg-applications-hub-router"
