@@ -11,7 +11,7 @@ pipeline {
      stages {
         stage ('Pre Build stage') {
             steps {
-                sh 'sudo apt-get update && sudo apt-get install -y build-essential'
+                sh 'sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y build-essential'
                 //sh 'terraform version'
                 sh 'sudo apt-get install ruby-full -y'
                 sh 'sudo apt install ruby-bundler -y' 
