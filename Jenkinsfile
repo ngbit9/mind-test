@@ -15,7 +15,7 @@ pipeline {
                 //sh 'terraform version'
                 sh 'sudo apt-get install ruby-full -y'
                 sh 'sudo apt install ruby-bundler -y' 
-                sh 'gem install chef-utils -v 16.6.14'
+                sh 'sudo gem install chef-utils -v 16.6.14'
                 
             }
         }
