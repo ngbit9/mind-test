@@ -17,8 +17,7 @@ pipeline {
                 sh 'sudo cp terraform /usr/local/bin'
                 sh 'terraform version'
                 sh 'sudo apt-get install ruby-full -y'
-                sh 'sudo apt install ruby-bundler -y' 
-                
+                sh 'sudo apt install ruby-bundler -y'                
             }
         }
         stage ('Build and Execute stage') {
