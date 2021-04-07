@@ -24,11 +24,12 @@ pipeline {
                  when { expression { params.DEPLOY_TO == "testing" } }
              steps {
                     git url: 'https://github.com/ngbit9/mind-test.git', branch: 'master'  
-                 //   sh 'sudo gem install chef-utils -v 16.6.14'
-                    sh 'sudo gem install kitchen-terraform --version 5.6.0 '
                     dir("${env.WORKSPACE}/kitchen-terraform") {
                           withCredentials([file(credentialsId: 'searce-academy', variable: 'GC_KEY')])
                            {
+                              sh 'sudo bundle update'
+                              sh 'sudo gem install chef-utils -v 16.6.14'
+                              sh 'sudo gem install kitchen-terraform --version 5.7.2 '
                               sh("gcloud auth activate-service-account --project=searce-academy --key-file=${GC_KEY}")
                               sh("export GOOGLE_APPLICATION_CREDENTIALS=${GCP_KEY}")
                               sh "kitchen test"
