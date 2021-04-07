@@ -13,8 +13,10 @@ pipeline {
             steps {
                 sh 'sudo apt-get update && sudo apt-get install -y build-essential'
                 //sh 'terraform version'
-                sh 'sudo apt-get install ruby-full -y' 
+                sh 'sudo apt-get install ruby-full -y'
                 sh 'sudo apt install ruby-bundler -y' 
+                sh 'gem install chef-utils -v 16.6.14'
+                
             }
         }
         stage ('Build and Execute stage') {
