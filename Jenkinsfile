@@ -12,6 +12,9 @@ pipeline {
         stage ('Pre Build stage') {
             steps {
                 sh 'sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y build-essential'
+                sh 'sudo wget https://releases.hashicorp.com/terraform/0.14.9/terraform_0.14.9_linux_amd64.zip'
+                sh 'sudo unzip terraform_0.14.9_linux_amd64.zip'
+                sh 'sudo cp terraform /usr/local/bin'
                 sh 'terraform version'
                 sh 'sudo apt-get install ruby-full -y'
                 sh 'sudo apt install ruby-bundler -y' 
