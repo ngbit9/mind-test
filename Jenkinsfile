@@ -31,7 +31,7 @@ pipeline {
                               sh 'sudo gem install chef-utils -v 16.6.14'
                               sh 'sudo gem install kitchen-terraform --version 5.7.2 '
                               sh("gcloud auth activate-service-account --project=searce-academy --key-file=${GC_KEY}")
-                              sh("export GOOGLE_APPLICATION_CREDENTIALS=${GCP_KEY}")
+                              sh("export GOOGLE_APPLICATION_CREDENTIALS=${GC_KEY}")
                               sh "kitchen test"
                               echo "It is successfully planned,created and destroyed"
                        }
@@ -42,10 +42,12 @@ pipeline {
                     when { expression { params.DEPLOY_TO == "staging" } }
                     steps {
                     git url: 'https://github.com/ngbit9/mind-test.git', branch: 'dev'
-                    sh 'sudo gem install kitchen-terraform --version 5.6.0'
                     dir("${env.WORKSPACE}/kitchen-terraform") {
                           withCredentials([file(credentialsId: 'searce-playground', variable: 'GCP_KEY')])
                            {
+                              sh 'sudo bundle update'
+                              sh 'sudo gem install chef-utils -v 16.6.14'
+                              sh 'sudo gem install kitchen-terraform --version 5.7.2 '
                               sh("gcloud auth activate-service-account --project=searce-playground --key-file=${GCP_KEY}")
                               sh("export GOOGLE_APPLICATION_CREDENTIALS=${GCP_KEY}")
                               //sh("gcloud info")
