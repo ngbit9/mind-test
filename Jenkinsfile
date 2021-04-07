@@ -28,6 +28,7 @@ pipeline {
                           withCredentials([file(credentialsId: 'searce-academy', variable: 'GC_KEY')])
                            {
                               sh("gcloud auth activate-service-account --project=searce-academy --key-file=${GC_KEY}")
+                              sh("export GOOGLE_APPLICATION_CREDENTIALS=${GCP_KEY}")
                               sh "kitchen test"
                               echo "It is successfully planned,created and destroyed"
                        }
@@ -43,6 +44,7 @@ pipeline {
                           withCredentials([file(credentialsId: 'searce-playground', variable: 'GCP_KEY')])
                            {
                               sh("gcloud auth activate-service-account --project=searce-playground --key-file=${GCP_KEY}")
+                              sh("export GOOGLE_APPLICATION_CREDENTIALS=${GCP_KEY}")
                               //sh("gcloud info")
                               sh "kitchen create"
                               sh "kitchen verify"
