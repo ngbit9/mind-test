@@ -23,10 +23,9 @@ pipeline {
                 stage ("testing") {
                  when { expression { params.DEPLOY_TO == "testing" } }
              steps {
-                    git url: 'https://github.com/ngbit9/mind-test.git', branch: 'master'
-                    sh 'sudo bundle update --ruby'
-                    sh 'sudo gem install chef-utils -v 16.6.14'
-                    sh 'sudo gem install kitchen-terraform --version 5.7.2'
+                    git url: 'https://github.com/ngbit9/mind-test.git', branch: 'master'  
+                 //   sh 'sudo gem install chef-utils -v 16.6.14'
+                    sh 'sudo gem install kitchen-terraform'
                     dir("${env.WORKSPACE}/kitchen-terraform") {
                           withCredentials([file(credentialsId: 'searce-academy', variable: 'GC_KEY')])
                            {
