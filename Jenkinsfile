@@ -4,10 +4,6 @@ pipeline {
             label 'master'
         }
     }
-//    parameters {
-//        booleanParam(name: "Enviornment", defaultValue: "testing")
-//        choice(name: "DEPLOY_TO", choices: ["","testing", "staging"])
-//    }
      stages {
         stage ('Pre Build stage') {
             steps {
@@ -25,7 +21,6 @@ pipeline {
             steps {
                    script {
                      if (env.branch_name.startsWith('PR')) {
-                 //when { expression { params.DEPLOY_TO == "testing" } }
                     git url: 'https://github.com/ngbit9/mind-test.git', branch: 'master'  
                     dir("${env.WORKSPACE}/kitchen-terraform") {
                           withCredentials([file(credentialsId: 'searce-academy', variable: 'GC_KEY')])
