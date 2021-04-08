@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh 'sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y build-essential'
                 sh 'sudo wget https://releases.hashicorp.com/terraform/0.14.9/terraform_0.14.9_linux_amd64.zip'
-                sh 'sudo unzip terraform_0.14.9_linux_amd64.zip'
+                sh 'sudo unzip -o terraform_0.14.9_linux_amd64.zip'
                 sh 'sudo cp terraform /usr/local/bin'
                 sh 'terraform version'
                 sh 'sudo apt-get install ruby-full -y'
@@ -35,8 +35,9 @@ pipeline {
                               sh 'sudo gem install kitchen-terraform --version 5.7.2 '
                               sh("gcloud auth activate-service-account --project=searce-academy --key-file=${GC_KEY}")
                               sh("export GOOGLE_APPLICATION_CREDENTIALS=${GC_KEY}")
-                              sh "kitchen test"
-                              echo "It is successfully planned,created and destroyed"
+                              sh("gcloud info")
+                               //sh "kitchen test"
+                              //echo "It is successfully planned,created and destroyed"
                        }
                     }
                   }
