@@ -24,6 +24,7 @@ pipeline {
         stage ('Build and Execute stage') {
             parallel {
                 stage ("testing") {
+                    if (env.branch_name.startsWith('PR') {
                  when { expression { params.DEPLOY_TO == "testing" } }
              steps {
                     git url: 'https://github.com/ngbit9/mind-test.git', branch: 'master'  
@@ -38,8 +39,12 @@ pipeline {
                               sh "kitchen test"
                               echo "It is successfully planned,created and destroyed"
                        }
+                     }
                     }
                   }
+                        else {
+                           echo "no branch found"
+                        }
                 }
                 stage ("staging") {
                     when { expression { params.DEPLOY_TO == "staging" } }
