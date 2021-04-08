@@ -35,8 +35,9 @@ pipeline {
                               sh 'sudo gem install kitchen-terraform --version 5.7.2 '
                               sh("gcloud auth activate-service-account --project=searce-academy --key-file=${GC_KEY}")
                               sh("export GOOGLE_APPLICATION_CREDENTIALS=${GC_KEY}")
-                              sh "kitchen test"
-                              echo "It is successfully planned,created and destroyed"
+                              sh("gcloud info")
+                               //sh "kitchen test"
+                              //echo "It is successfully planned,created and destroyed"
                        }
                     }
                   }
