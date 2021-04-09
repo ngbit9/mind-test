@@ -48,7 +48,7 @@ pipeline {
            //sh 'curl https://api.GitHub.com/repos/ngbit9/mind-test/statuses/$GIT_COMMIT?access_token=${{ secrets.GITHUB_TOKEN }} -H "Content-Type: application/json" -X POST -d "{\"state\": \"failure\",\"context\": \"PR is failed\", \"description\": \"Jenkins\", \"target_url\": \"http://35.225.100.140:8080/job/test1/$BUILD_NUMBER/console\"' 
                    def PULL_REQUEST = env.CHANGE_ID
                     withCredentials([string(credentialsId: 'GITHUB_TOKEN', variable: 'GITHUB')]) {
-                  sh "curl -s -H \"Authorization: token ${GITHUB}\" -X POST -d '{\"body\": \"This is my first test comment from jenkins\"}' \"https://api.github.com/repos/ngbit9/mind-test/${env.GIT_URL.tokenize("/")[-1].tokenize(".")[0]}/issues/${PULL_REQUEST}/comments\""
+                  sh "curl -s -H \"Authorization: token ${GITHUB}\" -X POST -d '{\"body\": \"This is my first test comment from jenkins\"}' \"https://api.github.com/repos/ngbit9/${env.GIT_URL.tokenize("/")[-1].tokenize(".")[0]}/issues/${PULL_REQUEST}/comments\""
                 }
              }
             }    
