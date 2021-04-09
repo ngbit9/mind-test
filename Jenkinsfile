@@ -4,6 +4,10 @@ pipeline {
             label 'master'
         }
     }
+      environment {
+      def token = "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"
+  }
+
      stages {
         stage ('Pre Build stage') {
             steps {
@@ -37,9 +41,16 @@ pipeline {
                   }
                 else {
                       echo 'no branch found'
-                  }
+                     }
                    }
+                 }
+              }
+            }
+        post {
+            failure {
+                script {
+           sh 'curl "https://api.GitHub.com/repos/ngbit9/mind-test/statuses/$GIT_COMMIT?access_token=$token -H "Content-Type: application/json" -X POST -d "{\"state\": \"failure\",\"context\": \"continuous-integration/jenkins\", \"description\": \"Jenkins\", \"target_url\": \"http://35.225.100.140:8080/job/test1/$BUILD_NUMBER/console\""' 
                 }
-               }
-            }   
-        }
+             }
+           }   
+         }
