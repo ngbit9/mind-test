@@ -50,6 +50,14 @@ pipeline {
                   sh "curl -s -H \"Authorization: token ${GITHUB}\" -X POST -d '{\"body\": \"Test is successfully completed\"}' \"https://api.github.com/repos/ngbit9/${env.GIT_URL.tokenize("/")[-1].tokenize(".")[0]}/issues/${PULL_REQUEST}/comments\""
                 }
              }
-            }               
+            }  
+            failed {
+                script {
+                   def PULL_REQUEST = env.CHANGE_ID
+                    withCredentials([string(credentialsId: 'GITHUB_TOKEN', variable: 'GITHUB')]) {
+                  sh "curl -s -H \"Authorization: token ${GITHUB}\" -X POST -d '{\"body\": \"Opps! Test Failed\"}' \"https://api.github.com/repos/ngbit9/${env.GIT_URL.tokenize("/")[-1].tokenize(".")[0]}/issues/${PULL_REQUEST}/comments\""
+                }
+             }
+            }             
            }   
          }
