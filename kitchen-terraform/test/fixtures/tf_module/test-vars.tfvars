@@ -1,5 +1,5 @@
 project_id = "searce-academy"
-network_name = "vpc-us-east4"
+network_name = "vpc-us-east2"
 region = "us-central1"
 cloud_router_name = "mv-stg-applications-hub-router"
 subnets = [
