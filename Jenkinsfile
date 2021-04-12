@@ -31,11 +31,12 @@ pipeline {
                               //sh 'gcloud iam service-accounts disable 427907482591-compute@developer.gserviceaccount.com' 
                               sh("gcloud auth activate-service-account --project=searce-academy --key-file=${GC_KEY}")
                               sh("gcloud info")
+                              sh("pwd")
                               //sh("gcloud compute networks create naman  --subnet-mode=custom --bgp-routing-mode=global --mtu=1500") 
-                              sh("export GOOGLE_APPLICATION_CREDENTIALS=${GC_KEY}")
-                              sh("echo $GOOGLE_APPLICATION_CREDENTIALS")
+                              //sh("export GOOGLE_APPLICATION_CREDENTIALS=${GC_KEY}")
+                              //sh("echo $GOOGLE_APPLICATION_CREDENTIALS")
                              // sh "kitchen test"
-                              echo "It is successfully planned,created and destroyed"
+                             // echo "It is successfully planned,created and destroyed"
                      }
                     }
                   }
