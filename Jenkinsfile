@@ -33,7 +33,7 @@ pipeline {
                               sh("gcloud auth activate-service-account --project=searce-academy --key-file=${GC_KEY}")
                               sh 'export GOOGLE_APPLICATION_CREDENTIALS=test.json'
                               //sh 'echo $GOOGLE_APPLICATION_CREDENTIALS > test.json && pwd' 
-                            //  sh "kitchen test"
+                              sh "kitchen test"
                               echo "It is successfully planned,created and destroyed"
                      }
                     }
