@@ -25,7 +25,7 @@ pipeline {
                     dir("${env.WORKSPACE}/kitchen-terraform") {
                           withCredentials([file(credentialsId: 'searce-academy', variable: 'GC_KEY')])
                            {
-                              writeFile file: '${env.WORKSPACE}/kitchen-terraform/test.json', text: readFile(GC_KEY)
+                              writeFile file: '${env.WORKSPACE}/kitchen-terraform/test1.json', text: readFile(GC_KEY)
                               sh 'sudo bundle update'
                               sh 'sudo gem install chef-utils -v 16.6.14'
                               sh 'sudo gem install kitchen-terraform --version 5.7.2 '
