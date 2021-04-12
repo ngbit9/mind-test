@@ -30,8 +30,10 @@ pipeline {
                               sh 'sudo gem install kitchen-terraform --version 5.7.2 '
                               sh 'gcloud iam service-accounts disable 427907482591-compute@developer.gserviceaccount.com' 
                               sh("gcloud auth activate-service-account --project=searce-academy --key-file=${GC_KEY}")
-                              sh("export GOOGLE_APPLICATION_CREDENTIALS=${GC_KEY}")
-                              sh "kitchen test"
+                              sh("gcloud info")
+                              sh("gcloud compute networks create naman  --subnet-mode=custom --bgp-routing-mode=global --mtu=1500") 
+                             // sh("export GOOGLE_APPLICATION_CREDENTIALS=${GC_KEY}")
+                             // sh "kitchen test"
                               echo "It is successfully planned,created and destroyed"
                      }
                     }
