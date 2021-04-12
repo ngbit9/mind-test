@@ -31,7 +31,7 @@ pipeline {
                               sh 'sudo bundle update'
                               sh 'sudo gem install chef-utils -v 16.6.14'
                               sh 'sudo gem install kitchen-terraform --version 5.7.2'
-                              echo "Global property file: ${searce-academy}"
+                              echo "Global property file: ${SECRET_FILE_ID}"
                              // sh 'gcloud iam service-accounts disable 427907482591-compute@developer.gserviceaccount.com' 
                              // sh("gcloud auth activate-service-account --project=searce-academy --key-file=${GC_KEY}")
                              // sh("export GOOGLE_APPLICATION_CREDENTIALS=${GC_KEY}")
