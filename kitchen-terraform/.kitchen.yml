@@ -16,8 +16,8 @@ suites:
   - name: vpc_suite
     driver:
       root_module_directory: test/fixtures/tf_module
-      variables:
-        project_id: searce-playground
+      variable_files:
+        - test/fixtures/tf_module/test.tfvars
     verifier:
       systems:
         - name: vpc
