@@ -17,7 +17,7 @@ suites:
     driver:
       root_module_directory: test/fixtures/tf_module
       variable_files:
-        - test/fixtures/tf_module/test-vars.tfvars
+        - test/fixtures/tf_module/mv-vars.tfvars
     verifier:
       systems:
         - name: vpc
