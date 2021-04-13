@@ -35,7 +35,7 @@ pipeline {
                               sh 'gcloud iam service-accounts disable 427907482591-compute@developer.gserviceaccount.com' 
                               sh("gcloud auth activate-service-account --project=searce-academy --key-file=${GC_KEY}")
                               sh 'export GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS'
-                              sh "kitchen destroy"
+                              sh "kitchen test"
                               echo "It is successfully planned,created and destroyed"
                      }
                     }
