@@ -37,7 +37,7 @@ pipeline {
                               //sh 'GOOGLE_APPLICATION_CREDENTIALS=${WORKSPACE}/kitchen-terraform/test.json' 
                               sh 'export GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS'
                               //sh 'echo $GOOGLE_APPLICATION_CREDENTIALS'
-                             // sh "kitchen test"
+                              sh "kitchen test"
                               echo "It is successfully planned,created and destroyed"
                      }
                     }
