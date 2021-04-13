@@ -18,6 +18,8 @@ suites:
       root_module_directory: test/fixtures/tf_module
       variable_files:
         - test/fixtures/test-variable.tf
+      variables:
+        project_id: searce-academy
     verifier:
       systems:
         - name: vpc
