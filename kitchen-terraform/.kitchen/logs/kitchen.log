@@ -1,3 +1,0 @@
-I, [2021-04-05T09:08:20.762163 #36479]  INFO -- Kitchen: -----> Starting Test Kitchen (v2.11.2)
-I, [2021-04-05T09:08:24.670550 #36479]  INFO -- Kitchen: -----> Destroying <vpc-suite-terraform>...
-I, [2021-04-05T09:09:21.521317 #36479]  INFO -- Kitchen: -----> Test Kitchen is finished. (1m0.76s)
