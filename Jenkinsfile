@@ -21,7 +21,7 @@ pipeline {
             steps {
                    script {
                      if (env.branch_name.startsWith('PR')) {
-                    git url: 'https://github.com/ngbit9/mind-test.git', branch: 'dev'  
+                    git url: 'https://github.com/ngbit9/mind-test.git'  
                     dir("${env.WORKSPACE}/kitchen-terraform") {
                           withCredentials([file(credentialsId: 'searce-academy', variable: 'GC_KEY')])
                            {
